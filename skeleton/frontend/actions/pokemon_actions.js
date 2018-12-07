@@ -14,14 +14,19 @@ export const receiveAllPokemon = pokemon => ({
 export const requestAllPokemon = () => dispatch => (
   APIUtil.fetchAllPokemon()
   .then(pokemon => dispatch(receiveAllPokemon(pokemon)))
-  );
+);
 
-  
+
   
 export const receiveSinglePokemon = pokeData => ({
   type: RECEIVE_SINGLE_POKEMON,
   pokeData
 });
+
+export const requestSinglePokemon = (id) => dispatch => (
+  APIUtil.fetchSinglePokemon(id)
+    .then(pokeData => dispatch(receiveSinglePokemon(pokeData)))
+);
 
 
 
