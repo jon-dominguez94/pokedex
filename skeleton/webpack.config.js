@@ -4,7 +4,7 @@ module.exports = {
   context: __dirname,
   entry: "./frontend/pokedex.jsx",
   output: {
-    path: path.resolve(__dirname, 'app', 'assests', 'javascripts'),
+    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: "bundle.js"
   },
   module: {
