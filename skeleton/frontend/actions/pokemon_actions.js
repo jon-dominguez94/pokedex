@@ -28,6 +28,8 @@ export const requestSinglePokemon = (id) => dispatch => (
     .then(pokeData => dispatch(receiveSinglePokemon(pokeData)))
 );
 
+window.requestSinglePokemon = requestSinglePokemon;
+
 
 
 

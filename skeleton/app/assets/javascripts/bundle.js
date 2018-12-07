@@ -131,6 +131,7 @@ var requestSinglePokemon = function requestSinglePokemon(id) {
     });
   };
 };
+window.requestSinglePokemon = requestSinglePokemon;
 window.requestAllPokemon = requestAllPokemon;
 
 /***/ }),
@@ -361,6 +362,7 @@ window.fetchSinglePokemon = _util_api_util__WEBPACK_IMPORTED_MODULE_4__["fetchSi
 window.fetchAllPokemon = _util_api_util__WEBPACK_IMPORTED_MODULE_4__["fetchAllPokemon"];
 document.addEventListener("DOMContentLoaded", function () {
   var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  window.store = store;
   var rootEl = document.getElementById("root");
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
@@ -479,14 +481,18 @@ var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(
 /*!****************************************!*\
   !*** ./frontend/reducers/selectors.js ***!
   \****************************************/
-/*! exports provided: selectAllPokemon */
+/*! exports provided: selectAllPokemon, selectSinglePokemon */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectAllPokemon", function() { return selectAllPokemon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectSinglePokemon", function() { return selectSinglePokemon; });
 var selectAllPokemon = function selectAllPokemon(state) {
   return Object.values(state.entities.pokemon);
+};
+var selectSinglePokemon = function selectSinglePokemon(state, id) {
+  return Object.values(state.entities.pokemon.id);
 };
 window.selectAllPokemon = selectAllPokemon;
 

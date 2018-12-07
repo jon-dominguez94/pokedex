@@ -10,6 +10,7 @@ window.fetchAllPokemon = APIUtil.fetchAllPokemon;
 
 document.addEventListener("DOMContentLoaded", () => {
   const store = configureStore();
+  window.store = store;
   const rootEl = document.getElementById("root");
   ReactDOM.render(<Root store={store}/>, rootEl);
 });
