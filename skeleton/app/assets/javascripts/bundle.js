@@ -380,9 +380,10 @@ var PokemonIndexItem = function PokemonIndexItem(_ref) {
     className: "pokemon-index-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/pokemon/".concat(pokemon.id)
-  }, pokemon.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: pokemon.image_url
-  })));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, pokemon.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: pokemon.image_url,
+    alt: pokemon.name
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, pokemon.name)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (PokemonIndexItem);
