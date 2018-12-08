@@ -1,9 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
+import { HashRouter, Route } from 'react-router-dom';
+import PokemonIndexContainer from './components/pokemon/pokemon_index_container';
+
+
 import configureStore from './store/store';
-import Root from './components/root';
+
 
 import * as APIUtil from './util/api_util';
+
+
+const Root = ({ store }) => (
+  <Provider store={store}>
+    <HashRouter>
+      <Route path="/" component={PokemonIndexContainer} />
+    </HashRouter>
+  </Provider>
+);
+
 
 window.fetchSinglePokemon = APIUtil.fetchSinglePokemon;
 window.fetchAllPokemon = APIUtil.fetchAllPokemon;
